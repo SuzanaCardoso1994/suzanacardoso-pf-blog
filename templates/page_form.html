@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if form.instance.pk %}Editar{% else %}Criar{% endif %} Página</title>
+</head>
+<body>
+    <h1>{% if form.instance.pk %}Editar{% else %}Criar{% endif %} Página</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+
+    <a href="{% url 'page_list' %}">Voltar para a lista de páginas</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim</title>
+</head>
+<body>
+    <h1>Sobre Mim</h1>
+    <div>
+        <h2>{{ owner_info.name }}</h2>
+        <p>{{ owner_info.bio }}</p>
+        <p>Contato: <a href="mailto:{{ owner_info.contact }}">{{ owner_info.contact }}</a></p>
+        {% if owner_info.image %}
+            <img src="{{ owner_info.image }}" alt="Imagem do Proprietário" width="200">
+        {% endif %}
+    </div>
+    <a href="{% url 'home' %}">Voltar para a página inicial</a>
+</body>
+</html>

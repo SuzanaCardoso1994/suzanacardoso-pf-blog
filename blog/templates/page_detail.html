@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    <h1>{{ page.title }}</h1>
+    <p>{{ page.content }}</p>
+    {% if page.image %}
+        <img src="{{ page.image.url }}" alt="Imagem da página">
+    {% endif %}
+    <a href="{% url 'home' %}">Voltar para a página inicial</a>
+</body>
+</html>

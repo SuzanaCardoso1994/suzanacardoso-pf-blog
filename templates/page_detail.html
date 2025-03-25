@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    <h1>{{ page.title }}</h1>
+    <p>{{ page.content }}</p>
+    
+    {% if page.image %}
+        <img src="{{ page.image.url }}" alt="{{ page.title }}" width="400">
+    {% endif %}
+    
+    <a href="{% url 'page_list' %}">Voltar para a lista de páginas</a>
+
+    {% if user.is_authenticated %}
+        <a href="{% url 'page_edit' page.pk %}">Editar Página</a>
+        <a href="{% url 'page_delete' page.pk %}" onclick="return confirm('Tem certeza que deseja excluir esta página?')">Excluir Página</a>
+    {% endif %}
+</body>
+</html>
+
